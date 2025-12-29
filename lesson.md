@@ -1,3 +1,106 @@
+## 🔵 Section 1: The Landscape of Data 
+
+*Goal: Choose the right tool for the job.*
+
+### **1.1 The Three Pillars**
+
+| Type | The "Vibe" | Example Use Case |
+| :---- | :---- | :---- |
+| **Relational (SQL)** | Structured & Rigid | Bank accounts, Inventories. |
+| **NoSQL** | Flexible & Fast | Social media feeds, Chat logs. |
+| **Vector** | Meaning & AI | Image search, Recommendation engines. |
+
+### **🛠️ Workshop: The Sorting Game**
+
+**Scenario:** You are the Lead Architect for a new startup. Which database type do you pick for these features?
+
+1. **User Profile Pictures:** (Hint: Unstructured data)  
+2. **Payment Processing:** (Hint: Must be 100% accurate)  
+3. **"Find me songs that sound like Jazz":** (Hint: Semantic similarity)
+
+**Socratic Reflection:** If NoSQL is so much faster and more flexible than SQL, why does every bank in the world still use SQL?
+
+## 🔵 Section 2: Building the Blueprint 
+
+*Goal: Link data correctly using Primary and Foreign Keys.*
+
+### 2.1 The Rules of the "ID"
+
+* **Primary Key (PK):** The unique fingerprint of a row. Never null.  
+* **Foreign Key (FK):** A "tag" in Table B that points back to a PK in Table A.
+
+### **🛠️ Workshop: Car Insurance ERD**
+
+Open [dbdiagram.io](https://dbdiagram.io/) and paste the following code. Your task is to **add a new table for "Claims"** and link it to the accidents table.
+
+// Car Insurance Schema  
+Table customers {  
+  id int \[pk, increment\]  
+  name varchar  
+  address varchar  
+}
+
+Table cars {  
+  id int \[pk, increment\]  
+  make varchar  
+  model varchar  
+  customer\_id int // This is our Foreign Key  
+}
+
+// LINK: One customer owns many cars  
+Ref: cars.customer\_id \> customers.id 
+
+Table accidents {  
+  id int \[pk, increment\]  
+  date datetime  
+  location varchar  
+  car\_id int  
+}
+
+// LINK: One car can have many accidents  
+Ref: accidents.car\_id \> cars.id 
+
+**Socratic Reflection:** If we delete a Customer, what should happen to their Cars? Why does the database care?
+
+## 🔵 Section 3: Cleaning the House 
+
+*Goal: Remove "messiness" through Normalization.*
+
+### **3.1 Why Clean the Data?**
+
+When data is "messy" (un-normalized), we run into **Anomalies**:
+
+* **Update Anomaly:** If John moves house, you have to update 100 rows. If you miss one, the data is wrong.  
+* **Deletion Anomaly:** If you delete an order, you might accidentally delete the customer's info entirely.
+
+### **3.2 The 3 Stages of Cleaning**
+
+1. **1NF (First Normal Form):** No "lists" in a single cell. Every row is unique.  
+2. **2NF (Second Normal Form):** No partial dependencies. (Everything in the row must relate to the *whole* Primary Key).  
+3. **3NF (Third Normal Form):** No "third-party" dependencies. (If Attribute A depends on Attribute B, and B isn't the Key, move it to its own table).
+
+### **🛠️ Workshop: The E-Commerce Deconstruction**
+
+**The Problem:** Look at this "Flat" table. It's full of redundancy.
+
+| OrderID | LineNo | ItemID | ItemName | ItemPrice | CustomerID | CustomerName |
+| :---- | :---- | :---- | :---- | :---- | :---- | :---- |
+| 100 | 1 | 10 | iPhone | 1000 | 1 | John |
+| 100 | 2 | 20 | iPad | 500 | 1 | John |
+| 200 | 1 | 30 | Macbook | 2000 | 1 | John |
+
+**Task:** Using your logic (and dbdiagram.io), break this into **3 separate tables** to reach 3rd Normal Form (3NF).
+
+* **Step 1:** Create an Orders table. What attributes stay here? (Hint: Date, CustomerID).  
+* **Step 2:** Create an Items table. (Hint: Does ItemName depend on the OrderID or the ItemID?).  
+* **Step 3:** Create an OrderLineItems table to connect them.
+
+**Socratic Reflection:** In your final design, if John changes his name to "Jonathan," how many rows do you need to update?
+
+
+
+Below is the previous content
+---
 # Lesson
 
 ## Brief
