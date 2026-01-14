@@ -15,3 +15,9 @@
 - Relational Database
   - [Codd's 12 rules](https://en.wikipedia.org/wiki/Codd%27s_12_rules)
   - [Normalization](https://en.wikipedia.org/wiki/Database_normalization)
+
+### Other Resources
+ 
+* \[Video\] **"Database Design Course \- Learn how to design and plan a database"** (FreeCodeCamp on YouTube) \- *Watch the first 10 mins.*  https://www.youtube.com/watch?v=ztHopE5Wnpc
+* \[Read\] **"What is a Relational Database?"** (Oracle/AWS definitions). https://aws.amazon.com/rds/what-is-a-relational-database/
+
