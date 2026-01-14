@@ -60,10 +60,3 @@ Identify which data belongs to the **"Transaction"** (happened once) and which d
 * **Item Price:** (Does this belong to the Milk? Or the Transaction? *Hint: What happens if the price of milk changes next week?*)
 
 **Bring your answers to the session\!** We will use this to break down the "E-Commerce Deconstruction" activity.
-
-## **🔗 Optional Resources**
-
-If you want to dive deeper before class:
-
-* \[Video\] **"Database Design Course \- Learn how to design and plan a database"** (FreeCodeCamp on YouTube) \- *Watch the first 10 mins.*  https://www.youtube.com/watch?v=ztHopE5Wnpc
-* \[Read\] **"What is a Relational Database?"** (Oracle/AWS definitions). https://aws.amazon.com/rds/what-is-a-relational-database/
