@@ -1,4 +1,4 @@
-# **📘 Lesson Plan: Data Modeling & Schema Design (3 Hours)**
+# **📘 Lesson Plan: Data Modeling & Schema Design**
 
 Module: 1.2 Data Modeling
 
